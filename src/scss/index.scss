@@ -1,0 +1,20 @@
+@import "./resources/colors";
+@import "./footer";
+@import "./header";
+@import "./table";
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}

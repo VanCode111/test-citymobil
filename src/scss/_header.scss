@@ -1,0 +1,9 @@
+.header {
+  height: 60px;
+  background-color: $main-color;
+  &__title {
+    color: white;
+    line-height: 60px;
+    font-size: 23px;
+  }
+}
