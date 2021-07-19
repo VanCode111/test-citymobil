@@ -1,14 +1,18 @@
 import classNames from "classnames";
 import React, { useState } from "react";
+import sortIcon from "../../img/sort.svg";
 
 function TableCars({ tariffs, cars, filterValue, chooseCar }) {
   const [sortCar, setSortCar] = useState(null);
-  const sortedCars =
-    sortCar != null
+
+  const sortCars = () => {
+    return sortCar != null
       ? sortCar
         ? cars.sort((a, b) => (a.mark + a.model > b.mark + b.model ? 1 : -1))
         : cars.sort((a, b) => (a.mark + a.model < b.mark + b.model ? 1 : -1))
       : cars;
+  };
+  const sortedCars = sortCars();
 
   const toggleSort = () => {
     setSortCar(null ? true : !sortCar);
@@ -17,7 +21,17 @@ function TableCars({ tariffs, cars, filterValue, chooseCar }) {
     <table className="table-cars" cellPadding="0" cellSpacing="0">
       <thead>
         <tr>
-          <td onClick={toggleSort}>Марка и модель</td>
+          <td onClick={toggleSort}>
+            <span>Марка и модель </span>
+            <img
+              className={classNames("table-cars__sort-icon", {
+                sort: sortCar === true,
+                "sort-reverce": sortCar === false,
+              })}
+              src={sortIcon}
+              alt="icon-sort"
+            />
+          </td>
           {tariffs.map((tariff, index) => {
             return (
               <td key={index} onClick={toggleSort}>

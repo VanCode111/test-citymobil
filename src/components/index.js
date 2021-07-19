@@ -4,3 +4,4 @@ export { default as SideBar } from "./SideBar";
 export { default as Filter } from "./Table/Filter";
 export { default as TableCars } from "./Table/TableCars";
 export { default as Output } from "./Table/Output";
+export { default as Loader } from "./Loader";

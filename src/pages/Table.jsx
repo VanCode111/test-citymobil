@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Filter, Output, TableCars } from "../components";
+import { Filter, Output, TableCars, Loader } from "../components";
 import axios from "axios";
 
 function Table() {
@@ -24,12 +24,15 @@ function Table() {
   return (
     <div className="table">
       <Filter applyFilter={applyFilter} />
-      <TableCars
-        tariffs={tariffs}
-        cars={cars}
-        filterValue={filterValue}
-        chooseCar={chooseCar}
-      />
+      {cars.length > 0 && (
+        <TableCars
+          tariffs={tariffs}
+          cars={cars}
+          filterValue={filterValue}
+          chooseCar={chooseCar}
+        />
+      )}
+      {cars.length < 1 && <Loader />}
       <Output selectedCar={selectedCar} />
     </div>
   );

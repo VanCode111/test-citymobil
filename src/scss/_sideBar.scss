@@ -1,0 +1,11 @@
+.side-bar {
+  width: 200px;
+  height: calc(100vh - 140px);
+  border-radius: 4px;
+  background-color: $main-color;
+  margin: 10px 0px 0px 10px;
+  position: absolute;
+  -webkit-box-shadow: 3px 3px 10px 3px #ddd;
+  -moz-box-shadow: 3px 3px 10px 3px #ddd;
+  box-shadow: 3px 3px 10px 3px #ddd;
+}

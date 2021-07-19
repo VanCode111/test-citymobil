@@ -1,7 +1,7 @@
 .table {
-  width: 70vw;
-  padding: 40px 0px 100px 0px;
-  margin: 0 auto;
+  width: calc(100vw - 210px);
+  padding: 40px 40px 100px 40px;
+  margin-left: auto;
 
   &__cars {
     margin-top: 20px;
@@ -13,6 +13,9 @@
   height: 30px;
   &__input {
     outline: none;
+    &:focus {
+      border: 2px solid $main-color;
+    }
     border-radius: 4px;
     font-family: "Montserrat", sans-serif;
     color: $dark-color;
@@ -77,18 +80,42 @@
 .table-cars {
   width: 100%;
   margin-top: 20px;
-  border-radius: 4px;
   color: $dark-color;
-  border: 1px solid #d4d4d4;
+  border: 1px solid #fff;
+  -webkit-box-shadow: 0px 0px 10px 3px #ddd;
+  -moz-box-shadow: 0px 0px 10px 3px #ddd;
+  box-shadow: 0px 0px 10px 3px #ddd;
   thead td {
-    background-color: #f7f7f7;
+    background-color: $main-color;
+    color: white;
   }
-
+  thead td:first-child {
+    display: flex;
+    align-items: center;
+    & > p {
+      height: 40px;
+    }
+  }
+  &__sort-icon {
+    margin-left: 10px;
+    opacity: 0;
+    line-height: 40px;
+    &.sort {
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+    &.sort-reverce {
+      opacity: 1;
+      transform: rotate(-180deg);
+    }
+  }
   & td {
+    border: 1px solid #fff;
     padding: 10px;
     text-align: center;
     cursor: pointer;
-    border: 1px solid #d4d4d4;
+    background-color: #f5f5f5;
+
     &.disable {
       pointer-events: none;
     }
@@ -102,8 +129,13 @@
 }
 
 .output {
-  margin-top: 10px;
+  margin-top: 20px;
   width: 100%;
-  padding: 5px;
-  border: 2px solid grey;
+  padding: 10px;
+  background-color: #ffc109;
+  border-radius: 4px;
+  color: white;
+  -webkit-box-shadow: 3px 3px 10px 3px #ddd;
+  -moz-box-shadow: 3px 3px 10px 3px #ddd;
+  box-shadow: 3px 3px 10px 3px #ddd;
 }
